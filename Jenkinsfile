@@ -27,5 +27,13 @@ pipeline{
                 bat 'java -cp target/mavenproject-1.0-SNAPSHOT.jar com.example.App'
             }
         }
+        post {
+            success {
+                echo 'Pipeline succeeded! Deploying...'
+            }
+            failure {
+                echo 'Pipeline failed!'
+            }
+        }
     }
 }
